@@ -3,7 +3,15 @@ import sys
 def ceaser():
     if len(sys.argv)!=2:
     return
-n = int(sys.argv[1])
+    n = int(sys.argv[1])
 
-message = input("What message do you want to encode?: ")
-message = message.upper()
+    message = input("What message do you want to encode?: ")
+    message = message.upper()
+    
+    shifted_message = ""
+    for i in message:
+        if i != ' ':
+            shifted_character = chr(((ord(i) - 65 + n) % 26) + 65)
+            shifted_message += shifted_character
+      
+
