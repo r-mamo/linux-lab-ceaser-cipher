@@ -4,7 +4,9 @@ def ceaser():
     if len(sys.argv)!=2:
     return
     n = int(sys.argv[1])
-
+    block_num = 0
+    block_len = 5
+    block_line= 10
     message = input("What message do you want to encode?: ")
     message = message.upper()
     
@@ -13,5 +15,15 @@ def ceaser():
         if i != ' ':
             shifted_character = chr(((ord(i) - 65 + n) % 26) + 65)
             shifted_message += shifted_character
+            
+    for i in range(0, len(shifted_message), block_len):
+        if block_num == block_line:
+            print()
+            block_num = 0
+        print(shifted_message[i:i+block_len], end=" ")
+        block_num += 1
+        print()
+
+ceaser()
       
 
