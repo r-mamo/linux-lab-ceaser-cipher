@@ -3,3 +3,7 @@ import sys
 def ceaser():
     if len(sys.argv)!=2:
     return
+n = int(sys.argv[1])
+
+message = input("What message do you want to encode?: ")
+message = message.upper()
